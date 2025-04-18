@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese el monto del préstamo: ");
+        double monto = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingrese el número de cuotas (meses): ");
+        int meses = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Ingrese el interés mensual (por ejemplo, 2.5 para 2.5%): ");
+        double interesMensual = Convert.ToDouble(Console.ReadLine()) / 100; // Convertimos a decimal
+
+        double cuotaMensual = (monto + (monto * interesMensual * meses)) / meses;
+
+        Console.WriteLine("\n--- Detalle de Amortización ---");
+        Console.WriteLine($"Monto del préstamo: {monto:C}");
+        Console.WriteLine($"Número de cuotas: {meses}");
+        Console.WriteLine($"Interés mensual: {interesMensual * 100}%");
+        Console.WriteLine($"Cuota mensual a pagar: {cuotaMensual:C}");
+    }
+}
