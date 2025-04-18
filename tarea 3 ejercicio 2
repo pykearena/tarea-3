@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese la cantidad en dólares (USD): ");
+        double dolares = Convert.ToDouble(Console.ReadLine());
+
+        double tasaEuro = 0.93;
+        double tasaPesoMexicano = 17.5;
+        double tasaSolPeruano = 3.8;
+
+        double euros = dolares * tasaEuro;
+        double pesos = dolares * tasaPesoMexicano;
+        double soles = dolares * tasaSolPeruano;
+
+        Console.WriteLine("\n--- Conversión de Moneda ---");
+        Console.WriteLine($"USD ingresado: {dolares:C}");
+        Console.WriteLine($"En Euros (EUR): {euros:F2}");
+        Console.WriteLine($"En Pesos Mexicanos (MXN): {pesos:F2}");
+        Console.WriteLine($"En Soles Peruanos (PEN): {soles:F2}");
+    }
+}
