@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingrese el nombre del empleado: ");
+        string nombre = Console.ReadLine();
+
+        Console.Write("Ingrese la cantidad de horas trabajadas: ");
+        double horasTrabajadas = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingrese el pago por hora: ");
+        double pagoPorHora = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingrese el porcentaje de descuento por retenciones (por ejemplo, 12.5): ");
+        double porcentajeDescuento = Convert.ToDouble(Console.ReadLine()) / 100; // Convertimos a decimal
+
+        double sueldoBruto = horasTrabajadas * pagoPorHora;
+        double totalDescuento = sueldoBruto * porcentajeDescuento;
+        double sueldoNeto = sueldoBruto - totalDescuento;
+
+        Console.WriteLine("\n--- Detalle de Pago ---");
+        Console.WriteLine($"Empleado: {nombre}");
+        Console.WriteLine($"Sueldo bruto: {sueldoBruto:C}");
+        Console.WriteLine($"Descuento ({porcentajeDescuento * 100}%): {totalDescuento:C}");
+        Console.WriteLine($"Sueldo neto a recibir: {sueldoNeto:C}");
+    }
+}
